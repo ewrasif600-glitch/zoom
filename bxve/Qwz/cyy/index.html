@@ -1,213 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  >
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>One Time Pass Code</title>
 
-  <link rel="icon" type="image/png" href="../../logo.png">
-
+  <link rel="icon" type="image/png" href="../../logo.png" />
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    /* =========================================
-       FULL PHONE SCREEN
-       ========================================= */
-
-    html,
-    body {
+    html, body {
       width: 100%;
       height: 100%;
-      margin: 0;
-
-      background: #ffffff;
-
+      background-color: #ffffff;
+      color: #202124;
       overflow: hidden;
     }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    /* =========================================
-       CONTAINER
-
-       Automatically equals the visible
-       screen height of the phone.
-       ========================================= */
-
+    /* iPhone 12 ebong mobile screen er jonno 100dvh use kora holo */
     .container {
       width: 100%;
-      max-width: 420px;
-
       height: 100dvh;
-      min-height: 100dvh;
-
-      background: #ffffff;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      justify-content: space-between;
       text-align: center;
-
-      /*
-        Vertical padding automatically changes
-        according to screen height.
-      */
-      padding:
-        clamp(12px, 4dvh, 35px)
-        clamp(14px, 5vw, 24px)
-        clamp(12px, 3dvh, 28px);
-
-      overflow: hidden;
+      padding: 2.5vh 5vw;
+      background: #ffffff;
     }
-
-    /* =========================================
-       CONTENT GROUP
-       ========================================= */
 
     .content-box {
-      width: 100%;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      /*
-        Content automatically adjusts according
-        to available screen height.
-      */
-      flex-shrink: 1;
+      width: 100%;
+      flex: 1;
+      justify-content: center;
     }
 
-    /* =========================================
-       LOGO
-       ========================================= */
-
+    /* Top Logo */
     .logo {
-      width: clamp(43px, 13vw, 55px);
-
+      width: 12vw;
+      max-width: 55px;
       height: auto;
-
-      display: block;
-
       object-fit: contain;
-
-      margin-bottom:
-        clamp(12px, 3.5dvh, 30px);
-
-      flex-shrink: 1;
+      margin-bottom: 1.5vh;
+      border-radius: 50%;
     }
 
-    /* =========================================
-       TITLE
-       ========================================= */
-
+    /* Main Title */
     h1 {
-      width: 100%;
-
-      font-size:
-        clamp(18px, 5vw, 22px);
-
-      line-height: 1.2;
-
+      font-size: clamp(18px, 4.5vw, 22px);
       font-weight: 700;
-
-      color: #111111;
-
-      margin-bottom:
-        clamp(12px, 3.5dvh, 30px);
-
-      flex-shrink: 1;
+      color: #1a1a1a;
+      margin-bottom: 2vh;
     }
 
-    /* =========================================
-       PHONE IMAGE
-
-       Size automatically changes based on
-       BOTH width AND height of phone.
-       ========================================= */
-
+    /* Phone Graphic Illustration */
     .phone-illustration {
-      width:
-        min(53vw, 215px);
-
-      height:
-        min(24dvh, 215px);
-
-      max-width: 215px;
-      max-height: 215px;
-
-      display: block;
-
+      width: 40vw;
+      max-width: 165px;
+      height: auto;
       object-fit: contain;
-
-      margin-bottom:
-        clamp(9px, 2.5dvh, 24px);
-
-      flex-shrink: 1;
+      margin-bottom: 2vh;
     }
 
-    /* =========================================
-       CHECK YOUR PHONE
-       ========================================= */
-
+    /* Sub Heading */
     h2 {
-      width: 100%;
-
-      font-size:
-        clamp(16px, 4.5vw, 19px);
-
-      line-height: 1.2;
-
+      font-size: clamp(16px, 4vw, 19px);
       font-weight: 700;
-
-      color: #111111;
-
-      margin-bottom:
-        clamp(4px, 1dvh, 9px);
-
-      flex-shrink: 1;
+      color: #1a1a1a;
+      margin-bottom: 1vh;
     }
 
-    /* =========================================
-       DESCRIPTION
-       ========================================= */
-
+    /* Description Text */
     .desc-text {
-      width: 100%;
-
-      font-size:
-        clamp(12px, 3.6vw, 15px);
-
-      line-height: 1.45;
-
-      font-weight: 500;
-
+      font-size: clamp(14px, 3.5vw, 15.5px);
+      font-weight: 600;
       color: #1f2937;
-
-      flex-shrink: 1;
+      line-height: 1.4;
     }
 
     .desc-text span {
@@ -215,216 +93,48 @@
       color: #000000;
     }
 
-    /* =========================================
-       RESEND BUTTON
-       ========================================= */
-
+    /* Resend Button */
     .btn-join {
-      width:
-        min(100%, 320px);
-
-      height:
-        clamp(42px, 6dvh, 50px);
-
-      margin-top:
-        clamp(10px, 2.5dvh, 20px);
-
-      background: #007aff;
-
-      color: #ffffff;
-
+      background-color: #007aff;
+      color: white;
+      padding: 14px 0;
+      width: 100%;
+      max-width: 330px;
+      font-size: 16px;
+      font-weight: bold;
       border: none;
-
-      border-radius: 10px;
-
-      font-size:
-        clamp(13px, 3.8vw, 16px);
-
-      font-weight: 700;
-
+      border-radius: 12px;
       cursor: pointer;
-
-      box-shadow:
-        0 4px 12px rgba(0, 122, 255, 0.25);
-
-      flex-shrink: 0;
-
-      transition:
-        background-color 0.2s,
-        transform 0.1s;
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
+      transition: background-color 0.2s, transform 0.1s;
+      margin-top: 1vh;
     }
 
     .btn-join:hover {
-      background: #005ec4;
+      background-color: #005ec4;
     }
 
     .btn-join:active {
       transform: scale(0.98);
     }
-
-    /* =========================================
-       TALL PHONES
-       ========================================= */
-
-    @media (min-height: 800px) {
-
-      .logo {
-        width: 54px;
-      }
-
-      h1 {
-        font-size: 21px;
-      }
-
-      .phone-illustration {
-        width: min(53vw, 210px);
-        height: min(24dvh, 210px);
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      .desc-text {
-        font-size: 14px;
-      }
-    }
-
-    /* =========================================
-       SHORT PHONES
-       ========================================= */
-
-    @media (max-height: 700px) {
-
-      .container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      .logo {
-        width: 42px;
-        margin-bottom: 10px;
-      }
-
-      h1 {
-        font-size: 18px;
-        margin-bottom: 11px;
-      }
-
-      .phone-illustration {
-        width: min(47vw, 170px);
-        height: min(20dvh, 170px);
-        margin-bottom: 9px;
-      }
-
-      h2 {
-        font-size: 16px;
-        margin-bottom: 4px;
-      }
-
-      .desc-text {
-        font-size: 12px;
-        line-height: 1.3;
-      }
-
-      .btn-join {
-        height: 42px;
-        margin-top: 9px;
-      }
-    }
-
-    /* =========================================
-       VERY SHORT PHONES
-       ========================================= */
-
-    @media (max-height: 600px) {
-
-      .container {
-        padding-top: 7px;
-        padding-bottom: 7px;
-      }
-
-      .logo {
-        width: 38px;
-        margin-bottom: 6px;
-      }
-
-      h1 {
-        font-size: 16px;
-        margin-bottom: 7px;
-      }
-
-      .phone-illustration {
-        width: 130px;
-        height: 120px;
-        margin-bottom: 6px;
-      }
-
-      h2 {
-        font-size: 14px;
-        margin-bottom: 3px;
-      }
-
-      .desc-text {
-        font-size: 11px;
-        line-height: 1.25;
-      }
-
-      .btn-join {
-        height: 38px;
-        margin-top: 6px;
-      }
-    }
   </style>
 </head>
-
 <body>
 
   <div class="container">
-
     <div class="content-box">
-
-      <!-- Zoom Logo -->
-      <img
-        class="logo"
-        src="../../Zoom-Logo.png"
-        alt="Zoom Logo"
-      >
-
-      <!-- Main Title -->
-      <h1>
-        One Time Pass Code
-      </h1>
-
-      <!-- Phone Illustration -->
-      <img
-        class="phone-illustration"
-        src="../icon.gif"
-        alt="Phone Illustration"
-      >
-
-      <!-- Heading -->
-      <h2>
-        Check your phone.
-      </h2>
-
-      <!-- Description -->
+      <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
+      <h1>One Time Pass Code</h1>
+      <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
+      <h2>Check your phone.</h2>
       <p class="desc-text">
         Google sent a notification to your phone.<br>
         <span>Tap Yes</span> on the notification<br>
         Then Tap Zoom Code
       </p>
-
-      <!-- Resend Button -->
-      <button
-        class="btn-join"
-        onclick="window.location.href='../'"
-      >
-        Resend
-      </button>
-
     </div>
 
+    <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
 
 </body>
