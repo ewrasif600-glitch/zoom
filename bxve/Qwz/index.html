@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>One Time Pass Code</title>
 
   <link rel="icon" type="image/png" href="../../logo.png" />
@@ -26,66 +26,70 @@
       overflow: hidden;
     }
 
+    /* Auto responsive container for phones */
     .container {
       width: 100%;
-      max-width: 400px;
       height: 100vh;
+      max-width: 420px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       text-align: center;
-      padding: 28px 20px;
+      padding: 4vh 5vw; /* Screen size onujayi auto padding hobe */
       background: #ffffff;
     }
 
-    /* Top Content Section */
     .content-box {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
+      flex-grow: 1;
+      justify-content: center;
     }
 
     /* Top Logo */
     .logo {
-      width: 65px;
-      height: 65px;
+      width: 14vw;
+      max-width: 60px;
+      height: auto;
       object-fit: contain;
-      margin-bottom: 14px;
+      margin-bottom: 2vh;
       border-radius: 50%;
     }
 
     /* Main Title */
     h1 {
-      font-size: 24px;
+      font-size: clamp(18px, 5vw, 24px); /* Auto scaling font */
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 18px;
+      margin-bottom: 2.5vh;
     }
 
-    /* Phone Graphic Illustration (Full screen match koranor jonno perfect size) */
+    /* Phone Graphic Illustration (Screen size onujayi auto adjust hobe) */
     .phone-illustration {
-      width: 220px; 
+      width: 45vw;
+      max-width: 190px;
       height: auto;
       object-fit: contain;
-      margin-bottom: 16px;
+      margin-bottom: 2.5vh;
     }
 
     /* Sub Heading */
     h2 {
-      font-size: 21px;
+      font-size: clamp(16px, 4.5vw, 20px);
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 8px;
+      margin-bottom: 1vh;
     }
 
     /* Description Text */
     .desc-text {
-      font-size: 16px;
+      font-size: clamp(13px, 3.8vw, 16px);
       font-weight: 600;
       color: #1f2937;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     .desc-text span {
@@ -93,20 +97,21 @@
       color: #000000;
     }
 
-    /* Resend Button (Ekdom nicher dike adjust kora holo) */
+    /* Resend Button */
     .btn-join {
       background-color: #007aff;
       color: white;
-      padding: 15px 0;
+      padding: 14px 0;
       width: 100%;
-      max-width: 330px;
+      max-width: 320px;
       font-size: 16px;
       font-weight: bold;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0, 122, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
       transition: background-color 0.2s, transform 0.1s;
+      margin-top: 2vh;
     }
 
     .btn-join:hover {
