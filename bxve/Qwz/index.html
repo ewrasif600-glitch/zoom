@@ -28,6 +28,10 @@
         sans-serif;
     }
 
+    /* =========================================
+       PAGE / VIEWPORT
+       ========================================= */
+
     html,
     body {
       width: 100%;
@@ -42,24 +46,22 @@
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
     }
 
     /* =========================================
-       MAIN SCREEN
+       MAIN CONTAINER
+
+       IMPORTANT:
+       100dvh = current visible phone screen
        ========================================= */
 
     .container {
       width: 100%;
       max-width: 420px;
 
-      /*
-        dvh = actual visible mobile viewport
-        This prevents content going below
-        the browser/mobile screen.
-      */
       height: 100dvh;
-      min-height: 0;
+      min-height: 100dvh;
 
       background: #ffffff;
 
@@ -69,14 +71,12 @@
 
       text-align: center;
 
-      /*
-        Horizontal spacing stays comfortable.
-        Vertical spacing automatically scales.
-      */
       padding:
         clamp(12px, 4dvh, 34px)
-        clamp(14px, 6vw, 26px)
+        clamp(14px, 5vw, 24px)
         clamp(12px, 3dvh, 24px);
+
+      overflow: hidden;
     }
 
     /* =========================================
@@ -90,12 +90,9 @@
       flex-direction: column;
       align-items: center;
 
-      /*
-        Important:
-        Content cannot grow outside viewport.
-      */
       min-height: 0;
-      flex-shrink: 1;
+
+      flex: 0 1 auto;
     }
 
     /* =========================================
@@ -103,13 +100,15 @@
        ========================================= */
 
     .logo {
-      width: clamp(42px, 13vw, 55px);
+      width: clamp(44px, 13vw, 55px);
 
       height: auto;
 
+      display: block;
+
       object-fit: contain;
 
-      margin-bottom: clamp(8px, 3dvh, 27px);
+      margin-bottom: clamp(10px, 3dvh, 28px);
 
       flex-shrink: 1;
     }
@@ -121,7 +120,7 @@
     h1 {
       width: 100%;
 
-      font-size: clamp(17px, 5vw, 22px);
+      font-size: clamp(18px, 5vw, 22px);
 
       line-height: 1.2;
 
@@ -129,35 +128,32 @@
 
       color: #111111;
 
-      margin-bottom: clamp(9px, 3dvh, 27px);
+      margin-bottom: clamp(10px, 3dvh, 27px);
 
       flex-shrink: 1;
     }
 
     /* =========================================
        PHONE ILLUSTRATION
+
+       Responsive according to BOTH:
+       - screen width
+       - screen height
        ========================================= */
 
     .phone-illustration {
-      /*
-        Width reacts to screen width.
-        Height reacts to screen height.
+      width: min(53vw, 215px);
 
-        This keeps it BIG but prevents
-        it from pushing the content down.
-      */
-      width: min(55vw, 220px);
+      height: min(24dvh, 215px);
 
-      height: min(23dvh, 220px);
-
-      max-width: 220px;
-      max-height: 220px;
+      max-width: 215px;
+      max-height: 215px;
 
       display: block;
 
       object-fit: contain;
 
-      margin-bottom: clamp(8px, 2.5dvh, 24px);
+      margin-bottom: clamp(9px, 2.5dvh, 22px);
 
       flex-shrink: 1;
     }
@@ -167,7 +163,9 @@
        ========================================= */
 
     h2 {
-      font-size: clamp(15px, 4.4vw, 19px);
+      width: 100%;
+
+      font-size: clamp(16px, 4.5vw, 19px);
 
       line-height: 1.2;
 
@@ -175,7 +173,7 @@
 
       color: #111111;
 
-      margin-bottom: clamp(4px, 1dvh, 9px);
+      margin-bottom: clamp(4px, 1dvh, 8px);
 
       flex-shrink: 1;
     }
@@ -200,7 +198,6 @@
 
     .desc-text span {
       font-weight: 800;
-
       color: #000000;
     }
 
@@ -209,15 +206,11 @@
        ========================================= */
 
     .btn-join {
-      width: min(100%, 330px);
+      width: min(100%, 320px);
 
-      /*
-        Button height also scales slightly
-        according to the screen.
-      */
-      height: clamp(42px, 6dvh, 50px);
+      height: clamp(42px, 6dvh, 49px);
 
-      margin-top: clamp(8px, 2.2dvh, 18px);
+      margin-top: clamp(9px, 2.2dvh, 18px);
 
       background-color: #007aff;
 
@@ -252,93 +245,9 @@
     }
 
     /* =========================================
-       SMALL HEIGHT PHONES
-       ========================================= */
+       iPHONE 12 / SIMILAR PHONES
 
-    @media (max-height: 700px) {
-
-      .container {
-        padding-top: 12px;
-        padding-bottom: 10px;
-      }
-
-      .logo {
-        width: 44px;
-        margin-bottom: 10px;
-      }
-
-      h1 {
-        font-size: 18px;
-        margin-bottom: 12px;
-      }
-
-      .phone-illustration {
-        width: 170px;
-        height: 170px;
-        margin-bottom: 10px;
-      }
-
-      h2 {
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-
-      .desc-text {
-        font-size: 12.5px;
-        line-height: 1.35;
-      }
-
-      .btn-join {
-        height: 43px;
-        margin-top: 10px;
-      }
-    }
-
-    /* =========================================
-       VERY SHORT SCREEN
-       ========================================= */
-
-    @media (max-height: 600px) {
-
-      .container {
-        padding-top: 8px;
-        padding-bottom: 8px;
-      }
-
-      .logo {
-        width: 40px;
-        margin-bottom: 7px;
-      }
-
-      h1 {
-        font-size: 17px;
-        margin-bottom: 8px;
-      }
-
-      .phone-illustration {
-        width: 135px;
-        height: 135px;
-        margin-bottom: 7px;
-      }
-
-      h2 {
-        font-size: 15px;
-        margin-bottom: 3px;
-      }
-
-      .desc-text {
-        font-size: 11.5px;
-        line-height: 1.3;
-      }
-
-      .btn-join {
-        height: 40px;
-        margin-top: 7px;
-      }
-    }
-
-    /* =========================================
-       iPHONE 12 / 13 / 14 SIZE
+       390 x 844 approximately
        ========================================= */
 
     @media (min-width: 375px) and (min-height: 750px) {
@@ -371,13 +280,133 @@
     }
 
     /* =========================================
-       TABLET / DESKTOP
+       SMALL PHONES
        ========================================= */
 
-    @media (min-width: 600px) {
+    @media (max-width: 360px) {
 
       .container {
-        max-width: 420px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+      }
+
+      .logo {
+        width: 43px;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .phone-illustration {
+        width: 165px;
+        height: 155px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .desc-text {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .btn-join {
+        height: 42px;
+        margin-top: 10px;
+      }
+    }
+
+    /* =========================================
+       SHORT SCREEN
+
+       Prevents content from going below screen
+       ========================================= */
+
+    @media (max-height: 700px) {
+
+      .container {
+        padding-top: 10px;
+        padding-bottom: 8px;
+      }
+
+      .logo {
+        width: 42px;
+        margin-bottom: 9px;
+      }
+
+      h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .phone-illustration {
+        width: min(45vw, 170px);
+        height: min(20dvh, 170px);
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      .desc-text {
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .btn-join {
+        height: 42px;
+        margin-top: 9px;
+      }
+    }
+
+    /* =========================================
+       VERY SHORT SCREEN
+       ========================================= */
+
+    @media (max-height: 600px) {
+
+      .container {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      .logo {
+        width: 38px;
+        margin-bottom: 6px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 7px;
+      }
+
+      .phone-illustration {
+        width: 130px;
+        height: 125px;
+        margin-bottom: 6px;
+      }
+
+      h2 {
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+
+      .desc-text {
+        font-size: 11px;
+        line-height: 1.25;
+      }
+
+      .btn-join {
+        height: 38px;
+        margin-top: 6px;
+        font-size: 12px;
       }
     }
   </style>
@@ -387,9 +416,9 @@
 
   <div class="container">
 
-    <!-- ==============================
-         MAIN CONTENT
-         ============================== -->
+    <!-- =================================
+         CONTENT
+         ================================= -->
 
     <div class="content-box">
 
@@ -429,9 +458,9 @@
 
     </div>
 
-    <!-- ==============================
+    <!-- =================================
          RESEND BUTTON
-         ============================== -->
+         ================================= -->
 
     <button
       class="btn-join"
