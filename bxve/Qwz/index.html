@@ -15,45 +15,37 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    /* Screen-er full height auto niye nibe */
     html, body {
       width: 100%;
       height: 100%;
       background-color: #ffffff;
       color: #202124;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    /* Container automatic full screen height-er sathe stretch hobe */
+    /* Container-ke puro screen jure rakhar jonno */
     .container {
       width: 100%;
-      height: 100vh;
-      max-width: 420px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       text-align: center;
-      padding: 24px 20px;
+      padding: 30px 20px;
       background: #ffffff;
     }
 
-    /* Content box auto space niye boro hobe */
     .content-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       width: 100%;
-      flex: 1; /* Eta automatically baki space fill kore nibe */
     }
 
     /* Top Logo */
     .logo {
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       object-fit: contain;
       margin-bottom: 12px;
       border-radius: 50%;
@@ -64,16 +56,16 @@
       font-size: 22px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
-    /* Phone Graphic Illustration (Auto responsive size) */
+    /* Phone Graphic Illustration */
     .phone-illustration {
-      width: 42vw;
-      max-width: 170px;
+      width: 45vw;
+      max-width: 180px;
       height: auto;
       object-fit: contain;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     /* Sub Heading */
@@ -97,13 +89,13 @@
       color: #000000;
     }
 
-    /* Resend Button (Auto niche fix thakbe) */
+    /* Resend Button */
     .btn-join {
       background-color: #007aff;
       color: white;
-      padding: 14px 0;
+      padding: 15px 0;
       width: 100%;
-      max-width: 320px;
+      max-width: 340px;
       font-size: 16px;
       font-weight: bold;
       border: none;
@@ -111,7 +103,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
       transition: background-color 0.2s, transform 0.1s;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .btn-join:hover {
