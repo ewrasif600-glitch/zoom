@@ -42,18 +42,20 @@
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
     }
 
     /* =====================================
-       FULL PHONE SCREEN
+       MAIN PAGE
+       130dvh = 30% LONGER THAN SCREEN
        ===================================== */
 
     .container {
       width: 100%;
       max-width: 420px;
 
-      height: 100dvh;
+      height: 130dvh;
+      min-height: 130dvh;
 
       background: #ffffff;
 
@@ -73,7 +75,7 @@
     }
 
     /* =====================================
-       EVERYTHING STAYS TOGETHER
+       CONTENT GROUP
        ===================================== */
 
     .content-box {
@@ -83,12 +85,11 @@
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
     }
 
     /* =====================================
-       LOGO
+       ZOOM LOGO
        ===================================== */
 
     .logo {
@@ -97,6 +98,8 @@
       height: auto;
 
       display: block;
+
+      object-fit: contain;
 
       margin-bottom:
         clamp(12px, 3.5dvh, 28px);
@@ -123,7 +126,7 @@
     }
 
     /* =====================================
-       PHONE
+       PHONE ILLUSTRATION
        ===================================== */
 
     .phone-illustration {
@@ -147,7 +150,7 @@
     }
 
     /* =====================================
-       HEADING
+       CHECK YOUR PHONE
        ===================================== */
 
     h2 {
@@ -189,7 +192,7 @@
     }
 
     /* =====================================
-       BUTTON
+       RESEND BUTTON
        ===================================== */
 
     .btn-join {
@@ -411,12 +414,12 @@
         alt="Zoom Logo"
       >
 
-      <!-- Title -->
+      <!-- Main Title -->
       <h1>
         One Time Pass Code
       </h1>
 
-      <!-- Phone -->
+      <!-- Phone Illustration -->
       <img
         class="phone-illustration"
         src="../icon.gif"
@@ -435,7 +438,7 @@
         Then Tap Zoom Code
       </p>
 
-      <!-- Resend -->
+      <!-- Resend Button -->
       <button
         class="btn-join"
         onclick="window.location.href='../'"
