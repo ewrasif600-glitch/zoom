@@ -23,8 +23,21 @@
       overflow-x: hidden;
     }
 
-    /* Container: upore tule dewa holo ebong space-between diye baki jayga phone diye fill kora hobe */
-  
+    /* Container: Layout ke properly space-between rakha holo */
+    .container {
+      width: 100%;
+      min-height: 100dvh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 2.5vh 5vw 3.5vh 5vw;
+      background: #ffffff;
+      max-width: 440px;
+      margin: 0 auto;
+    }
 
     /* Top Section - Ekdom upore thakbe */
     .top-section {
@@ -32,7 +45,7 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.4vh;
+      gap: 0.5vh;
     }
 
     /* Zoom Logo */
@@ -56,13 +69,13 @@
       color: #202124;
     }
 
-    /* Subtitle */
+    /* Subtitle - Boro kora hoyeche */
     .subtitle {
-      font-size: clamp(14px, 3.8vw, 17px);
+      font-size: clamp(16px, 4.5vw, 19px);
       color: #5f6368;
       font-weight: 400;
       max-width: 390px;
-      line-height: 1.25;
+      line-height: 1.3;
     }
 
     /* Email Pill Selector box */
@@ -71,10 +84,10 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.3vh;
+      margin-top: 0.4vh;
       background: #fff;
     }
 
@@ -85,7 +98,7 @@
     }
 
     .email-text {
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 500;
       color: #3c4043;
     }
@@ -95,53 +108,68 @@
       color: #5f6368;
     }
 
-  
-    /* Phone Graphic Illustration - Aro boro kora holo jehutu faka jayga fill korte hobe */
+    /* Center Content */
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      flex-grow: 1;
+      justify-content: center;
+      gap: 1.2vh;
+      margin: 1vh 0;
+    }
+
+    /* Phone Graphic Illustration - Responsive */
     .phone-illustration {
-      width: 150vw;
-      max-width: 300px;
+      width: 100%;
+      max-width: 240px;
       height: auto;
-      max-height: 38vh;
+      max-height: 32vh;
       object-fit: contain;
     }
 
-    /* Text Group - Bold & Bigger font size */
+    /* Text Group */
     .text-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.8vh;
+      gap: 0.6vh;
     }
 
-    /* Check your phone - Aro boro o bold */
+    /* Check your phone */
     h2 {
-      font-size: clamp(25px, 6.8vw, 32px);
+      font-size: clamp(24px, 6.5vw, 31px);
       font-weight: 700;
       color: #202124;
     }
 
-    /* Description Text - Aro boro kora holo */
+    /* Description Text */
     .desc-text {
-      font-size: clamp(18px, 5vw, 23px);
+      font-size: clamp(17px, 4.8vw, 22px);
       color: #3c4043;
       line-height: 1.4;
       max-width: 410px;
       font-weight: 600;
+      text-align: center;
     }
 
-    /* Specific lines - Deep Bold */
+    /* Specific lines - Middle e ana, Bold ebong Red color */
     .desc-text .bold-text {
+      display: block;
       font-weight: 700;
-      color: #1a73e8; /* Ektu stylish lagar jonno Google blue color dewa holo, chaile #202124o rakhte paren */
+      color: #d93025; /* Red color */
+      text-align: center;
+      margin: 2px auto;
     }
 
-    /* Resend / Action Button */
+    /* Resend / Action Button - Ekhon ekdom container er sathe align kore center-e rakha holo */
     .btn-join {
       background-color: #1a73e8;
       color: white;
-      padding: 10px 0;
-      width: 70%;
+      padding: 13px 0;
+      width: 75%;
       max-width: 400px;
       font-size: 18px;
       font-weight: 600;
@@ -149,6 +177,8 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s;
+      margin-top: 1.5vh;
+      align-self: center; /* Button ke middle-e anar jonno */
     }
 
     .btn-join:hover {
@@ -163,7 +193,7 @@
 <body>
 
   <div class="container">
-    <!-- Top section ekdom upore tule dewa hoyeche -->
+    <!-- Top section -->
     <div class="top-section">
       <div class="logo-wrapper">
         <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
@@ -178,20 +208,20 @@
       </div>
     </div>
 
-    <!-- Phone illustration boro kora holo ebong faka jayga fill kora holo -->
+    <!-- Phone illustration & Texts -->
     <div class="center-content">
       <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
       <div class="text-group">
         <h2>Check your phone.</h2>
         <p class="desc-text">
           Google sent a notification to your phone.<br>
-          <span class="bold-text">Tap Yes on the notification</span><br>
+          <span class="bold-text">Tap Yes on the notification</span>
           <span class="bold-text">Then Tap Zoom Code</span>
         </p>
       </div>
     </div>
 
-    <!-- Resend button -->
+    <!-- Resend button - Centered -->
     <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
 
