@@ -33,49 +33,50 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      padding: 1.5vh 4vw 2vh 4vw;
+      padding: 3.5vh 4vw 2vh 4vw;
       background: #ffffff;
       max-width: 440px;
       margin: 0 auto;
     }
 
-    /* Top Section */
+    /* Top Section - Uporer box ke ektu niche namanor jonno padding-top ba margin dewa holo */
     .top-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.4vh;
+      gap: 0.5vh;
+      margin-top: 1.5vh;
     }
 
-    /* Zoom Logo - Crop fix kora holo (overflow and height fix) */
+    /* Zoom Logo - Crop fix rakhbe */
     .logo-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 35px;
+      height: 38px;
     }
 
     .logo {
-      height: 28px;
+      height: 30px;
       width: auto;
       object-fit: contain;
     }
 
-    /* Main Heading - Aro boro font */
+    /* Main Heading */
     h1 {
-      font-size: clamp(23px, 6vw, 29px);
+      font-size: clamp(24px, 6.2vw, 30px);
       font-weight: 500;
       color: #202124;
     }
 
-    /* Subtitle - Aro boro font */
+    /* Subtitle */
     .subtitle {
-      font-size: clamp(14.5px, 4vw, 17px);
+      font-size: clamp(15px, 4.2vw, 18px);
       color: #5f6368;
       font-weight: 400;
-      max-width: 360px;
-      line-height: 1.3;
+      max-width: 370px;
+      line-height: 1.35;
     }
 
     /* Email Pill Selector box */
@@ -84,10 +85,10 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 4px 14px;
+      padding: 5px 15px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.3vh;
+      margin-top: 0.5vh;
       background: #fff;
     }
 
@@ -98,7 +99,7 @@
     }
 
     .email-text {
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 500;
       color: #3c4043;
     }
@@ -108,26 +109,26 @@
       color: #5f6368;
     }
 
-    /* Center Content Wrapper (Phone + Text grouped together to eliminate gap) */
+    /* Center Content Wrapper (Phone + Text grouped together) */
     .center-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1.2vh;
+      gap: 1.5vh;
       margin: auto 0;
     }
 
-    /* Phone Graphic Illustration - Aro boro kora holo */
+    /* Phone Graphic Illustration - Onk boro kora holo */
     .phone-illustration {
-      width: 48vw;
-      max-width: 200px;
+      width: 65vw;
+      max-width: 270px;
       height: auto;
-      max-height: 32vh;
+      max-height: 40vh;
       object-fit: contain;
     }
 
-    /* Text Group (Phone er nichei check er text gulo) */
+    /* Text Group */
     .text-group {
       display: flex;
       flex-direction: column;
@@ -136,19 +137,19 @@
       gap: 0.4vh;
     }
 
-    /* Sub Heading - Aro boro font */
+    /* Sub Heading */
     h2 {
-      font-size: clamp(20px, 5.2vw, 25px);
+      font-size: clamp(21px, 5.5vw, 26px);
       font-weight: 500;
       color: #202124;
     }
 
-    /* Description Text - Aro boro font */
+    /* Description Text */
     .desc-text {
-      font-size: clamp(15.5px, 4.3vw, 19px);
+      font-size: clamp(16px, 4.5vw, 19.5px);
       font-weight: 400;
       color: #3c4043;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .desc-text span {
@@ -156,19 +157,20 @@
       color: #202124;
     }
 
-    /* Resend / Action Button - Ektu opore ana holo */
+    /* Resend / Action Button - Ektu opore uthano holo */
     .btn-join {
       background-color: #1a73e8;
       color: white;
-      padding: 13px 0;
+      padding: 14px 0;
       width: 100%;
       max-width: 360px;
-      font-size: 17px;
+      font-size: 17.5px;
       font-weight: 500;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s;
+      margin-bottom: 1vh;
     }
 
     .btn-join:hover {
@@ -197,7 +199,7 @@
       </div>
     </div>
 
-    <!-- Phone illustration and check text grouped together directly under center -->
+    <!-- Phone illustration and check text grouped together -->
     <div class="center-content">
       <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
       <div class="text-group">
