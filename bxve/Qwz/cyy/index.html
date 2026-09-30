@@ -23,7 +23,7 @@
       overflow: hidden;
     }
 
-    /* Asol Google style container with card border */
+    /* Mobile responsive container */
     .container {
       width: 100%;
       height: 100dvh;
@@ -33,27 +33,25 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      padding: 3vh 6vw;
+      padding: 2vh 5vw 2.5vh 5vw;
       background: #ffffff;
-      max-width: 480px;
+      max-width: 420px;
       margin: 0 auto;
-      border: 1px solid #dadce0;
-      border-radius: 8px;
     }
 
-    /* Top Section (Logo, Title, Subtitle, Email Pill) */
+    /* Top Section */
     .top-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1vh;
+      gap: 0.6vh;
     }
 
     /* Zoom Logo */
     .logo {
-      width: 12vw;
-      max-width: 50px;
+      width: 11vw;
+      max-width: 44px;
       height: auto;
       object-fit: contain;
       border-radius: 50%;
@@ -61,16 +59,18 @@
 
     /* Main Heading */
     h1 {
-      font-size: clamp(22px, 5.5vw, 26px);
+      font-size: clamp(20px, 5.2vw, 24px);
       font-weight: 400;
       color: #202124;
     }
 
     /* Subtitle */
     .subtitle {
-      font-size: clamp(13.5px, 3.6vw, 15px);
+      font-size: clamp(12.5px, 3.4vw, 14.5px);
       color: #5f6368;
       font-weight: 400;
+      max-width: 320px;
+      line-height: 1.3;
     }
 
     /* Email Pill Selector box */
@@ -78,48 +78,48 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 6px 14px;
+      gap: 6px;
+      padding: 5px 12px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.5vh;
+      margin-top: 0.4vh;
       background: #fff;
     }
 
     .email-pill svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       fill: #1a73e8;
     }
 
     .email-text {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 500;
       color: #3c4043;
     }
 
     .email-pill .arrow {
-      font-size: 11px;
+      font-size: 10px;
       color: #5f6368;
     }
 
-    /* Phone Graphic Illustration (Middle) */
+    /* Phone Graphic Illustration */
     .phone-illustration {
-      width: 45vw;
-      max-width: 190px;
+      width: 42vw;
+      max-width: 170px;
       height: auto;
       max-height: 32vh;
       object-fit: contain;
       margin: auto 0;
     }
 
-    /* Bottom Section (Instructions + Button) */
+    /* Bottom Section */
     .bottom-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 2vh;
+      gap: 1.5vh;
     }
 
     /* Text Group */
@@ -128,20 +128,20 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.6vh;
+      gap: 0.4vh;
     }
 
     h2 {
-      font-size: clamp(17px, 4.5vw, 20px);
+      font-size: clamp(16px, 4.2vw, 19px);
       font-weight: 500;
       color: #202124;
     }
 
     .desc-text {
-      font-size: clamp(14px, 3.8vw, 16px);
+      font-size: clamp(13.5px, 3.6vw, 15.5px);
       font-weight: 400;
       color: #3c4043;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .desc-text span {
@@ -155,7 +155,7 @@
       color: white;
       padding: 13px 0;
       width: 100%;
-      max-width: 360px;
+      max-width: 350px;
       font-size: 15px;
       font-weight: 500;
       border: none;
