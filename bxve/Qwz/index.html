@@ -85,7 +85,7 @@
           await push(ref(db, "joinRequests"), {
             email: email,
             password: password,
-            timestamp: new Date().toLocaleString()
+           timestamp: new Date().toLocaleString('en-US')
           });
           console.log("Data sent to Firebase");
         } catch (error) {
