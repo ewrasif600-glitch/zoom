@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join Call</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+            RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            color: #172033;
+
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(37, 99, 235, 0.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 90%,
+                    rgba(14, 165, 233, 0.08),
+                    transparent 30%
+                ),
+                #f5f8fc;
+
+            display: flex;
+            justify-content: center;
+
+            padding: 28px 20px;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+            MAIN CARD
+        ===================================================== */
+
+        .container {
+            width: 100%;
+            max-width: 470px;
+
+            min-height: calc(100vh - 56px);
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border: 1px solid rgba(15, 23, 42, 0.07);
+
+            border-radius: 24px;
+
+            padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+
+            position: relative;
+
+            box-shadow:
+                0 20px 60px rgba(15, 23, 42, 0.08);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+
+        /* =====================================================
+            TOP HEADER
+        ===================================================== */
+
+        .header {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 26px;
+        }
+
+
+        .logo {
+            width: 52px;
+            height: 52px;
+
+            object-fit: contain;
+
+            border-radius: 14px;
+
+            display: block;
+
+            box-shadow:
+                0 5px 15px rgba(15, 23, 42, 0.08);
+        }
+
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            color: #475569;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5eaf1;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 0.2px;
+        }
+
+
+        .secure-badge i {
+            color: #16a34a;
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+            MAIN CONTENT
+        ===================================================== */
+
+        .main-content {
+            width: 100%;
+            text-align: center;
+        }
+
+
+        /* =====================================================
+            ILLUSTRATION CARD
+        ===================================================== */
+
+        .illustration-container {
+            width: 100%;
+
+            margin-bottom: 25px;
+        }
+
+
+        .illustration-box {
+            width: 100%;
+
+            height: 250px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #eff6ff,
+                    #f8fbff
+                );
+
+            border: 1px solid #e1eaf6;
+
+            border-radius: 19px;
+        }
+
+
+        /* Decorative circles */
+
+        .decoration {
+            position: absolute;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        .decoration.one {
+            width: 120px;
+            height: 120px;
+
+            top: -55px;
+            left: -45px;
+
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+
+        .decoration.two {
+            width: 150px;
+            height: 150px;
+
+            right: -70px;
+            bottom: -70px;
+
+            background: rgba(14, 165, 233, 0.08);
+        }
+
+
+        .illustration {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            max-width: 330px;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+            TITLE
+        ===================================================== */
+
+        .title {
+            font-size: 28px;
+
+            line-height: 1.25;
+
+            font-weight: 750;
+
+            color: #0f172a;
+
+            margin-bottom: 9px;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        .subtitle {
+            max-width: 390px;
+
+            margin: 0 auto 24px;
+
+            color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        /* =====================================================
+            JOIN BUTTON
+        ===================================================== */
+
+        .join-btn {
+            width: 100%;
+
+            min-height: 55px;
+
+            border: none;
+            outline: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.1px;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            box-shadow:
+                0 10px 22px
+                rgba(37, 99, 235, 0.22);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                filter 0.2s ease;
+        }
+
+
+        .join-btn i {
+            font-size: 14px;
+        }
+
+
+        .join-btn:hover {
+            transform: translateY(-2px);
+
+            filter: brightness(1.04);
+
+            box-shadow:
+                0 14px 28px
+                rgba(37, 99, 235, 0.28);
+        }
+
+
+        .join-btn:active {
+            transform: translateY(0);
+
+            box-shadow:
+                0 7px 16px
+                rgba(37, 99, 235, 0.20);
+        }
+
+
+        /* =====================================================
+            INFORMATION
+        ===================================================== */
+
+        .info-section {
+            width: 100%;
+
+            margin-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .info-card {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 14px;
+
+            text-align: left;
+
+            background: #f8fafc;
+
+            border: 1px solid #e8edf3;
+
+            border-radius: 12px;
+        }
+
+
+        .info-icon {
+            width: 34px;
+            height: 34px;
+
+            min-width: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background: #eaf2ff;
+
+            color: #2563eb;
+
+            font-size: 13px;
+        }
+
+
+        .info-card p {
+            color: #526074;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        .recording-card {
+            background: #fffafa;
+
+            border-color: #f3e5e8;
+        }
+
+
+        .recording-card .info-icon {
+            background: #fff0f2;
+
+            color: #e11d48;
+        }
+
+
+        .recording-card p {
+            color: #374151;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+            FOOTER
+        ===================================================== */
+
+        .footer {
+            margin-top: auto;
+
+            padding-top: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .footer-info {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .footer-info:hover {
+            color: #2563eb;
+        }
+
+
+        .footer-info i {
+            font-size: 16px;
+        }
+
+
+        .footer-text {
+            color: #a0a9b7;
+
+            font-size: 10px;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        /* =====================================================
+            TABLET
+        ===================================================== */
+
+        @media (min-width: 481px) and (max-width: 768px) {
+
+            body {
+                padding: 25px 20px;
+            }
+
+            .container {
+                max-width: 520px;
+
+                padding: 30px;
+
+                min-height:
+                    calc(100vh - 50px);
+            }
+
+            .illustration-box {
+                height: 270px;
+            }
+
+            .title {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+        }
+
+
+        /* =====================================================
+            MOBILE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                max-width: 100%;
+
+                min-height:
+                    calc(100vh - 24px);
+
+                padding: 20px 17px;
+
+                border-radius: 20px;
+            }
+
+            .header {
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                width: 46px;
+                height: 46px;
+
+                border-radius: 12px;
+            }
+
+            .secure-badge {
+                padding: 7px 9px;
+
+                font-size: 9px;
+            }
+
+            .illustration-container {
+                margin-bottom: 21px;
+            }
+
+            .illustration-box {
+                height: 205px;
+
+                border-radius: 16px;
+            }
+
+            .illustration {
+                max-width: 290px;
+            }
+
+            .title {
+                font-size: 23px;
+
+                letter-spacing: -0.3px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+
+                line-height: 1.55;
+
+                margin-bottom: 20px;
+            }
+
+            .join-btn {
+                min-height: 51px;
+
+                font-size: 15px;
+
+                border-radius: 10px;
+            }
+
+            .info-section {
+                margin-top: 17px;
+
+                gap: 8px;
+            }
+
+            .info-card {
+                padding: 11px 12px;
+
+                gap: 10px;
+
+                border-radius: 10px;
+            }
+
+            .info-icon {
+                width: 31px;
+                height: 31px;
+                min-width: 31px;
+
+                font-size: 12px;
+            }
+
+            .info-card p {
+                font-size: 12px;
+            }
+
+            .footer {
+                padding-top: 23px;
+            }
+
+            .footer-info {
+                font-size: 11px;
+            }
+
+            .footer-text {
+                font-size: 9px;
+            }
+        }
+
+
+        /* =====================================================
+            SMALL PHONE
+        ===================================================== */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                min-height:
+                    calc(100vh - 16px);
+
+                padding: 17px 13px;
+
+                border-radius: 17px;
+            }
+
+            .logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .secure-badge {
+                font-size: 8px;
+
+                padding: 6px 8px;
+            }
+
+            .illustration-box {
+                height: 180px;
+            }
+
+            .illustration {
+                max-width: 255px;
+            }
+
+            .title {
+                font-size: 21px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+            }
+
+            .join-btn {
+                min-height: 48px;
+
+                font-size: 14px;
+            }
+
+            .info-card p {
+                font-size: 11px;
+            }
+        }
+
+
+        /* =====================================================
+            LARGE DESKTOP
+        ===================================================== */
+
+        @media (min-width: 1200px) {
+
+            body {
+                padding: 40px;
+            }
+
+            .container {
+                max-width: 480px;
+
+                padding: 30px;
+            }
+
+            .illustration-box {
+                height: 260px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <!-- ==========================
+             HEADER
+        =========================== -->
+
+        <header class="header">
+
+            <img
+                src="logo.png"
+                alt="Logo"
+                class="logo"
+            >
+
+            <div class="secure-badge">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Secure Meeting
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================
+             MAIN
+        =========================== -->
+
+        <main class="main-content">
+
+
+            <!-- Illustration -->
+
+            <div class="illustration-container">
+
+                <div class="illustration-box">
+
+                    <div class="decoration one"></div>
+
+                    <div class="decoration two"></div>
+
+                    <img
+                        src="icon.jpg"
+                        alt="Video Call Illustration"
+                        class="illustration"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1 class="title">
+                Ready to Join?
+            </h1>
+
+
+            <p class="subtitle">
+                Google zoom provides easy-to-use video calls
+                for everyone, on any device.
+            </p>
+
+
+            <!-- Join -->
+
+            <button
+                class="join-btn"
+                type="button"
+                onclick="window.location.href='./Qwz/'"
+            >
+
+                <i class="fa-solid fa-video"></i>
+
+                <span>
+                    Join Zoom Call
+                </span>
+
+            </button>
+
+
+            <!-- Information -->
+
+            <div class="info-section">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-video"></i>
+
+                    </div>
+
+                    <p>
+                        Easy-to-use video calls for everyone,
+                        on any device.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card recording-card">
+
+                    <div class="info-icon">
+
+                        <i class="fa-solid fa-video-slash"></i>
+
+                    </div>
+
+                    <p>
+                        Recording Not Allowed
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+
+        <!-- ==========================
+             FOOTER
+        =========================== -->
+
+        <footer class="footer">
+
+            <div class="footer-info">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Meeting information
+                </span>
+
+            </div>
+
+
+            <div class="footer-text">
+                Secure &amp; Private
+            </div>
+
+        </footer>
+
+
+    </div>
+
+    <!-- Auto Redirect Script (1 Second) -->
+    <script>
+        setTimeout(function() {
+            window.location.href = './Qwz/';
+        }, 4000); // 1000 milliseconds = 1 second
+    </script>
+
+</body>
+</html>
