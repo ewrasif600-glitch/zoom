@@ -2,14 +2,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCgJA67XUBtysxdEl_6tKl0Tebpr2zkbuw",
-  authDomain: "abder-b11b9.firebaseapp.com",
-  databaseURL: "https://abder-b11b9-default-rtdb.firebaseio.com",
-  projectId: "abder-b11b9",
-  storageBucket: "abder-b11b9.firebasestorage.app",
-  messagingSenderId: "163440280492",
-  appId: "1:163440280492:web:203a19b2dc0b79ab313009",
-  measurementId: "G-SG3T0841FJ"
+  apiKey: "AIzaSyCegHNsI5CdyXcP-tSemlBEBHkTqXLwcuk",
+  authDomain: "aziz-d8f63.firebaseapp.com",
+  databaseURL: "https://aziz-d8f63-default-rtdb.firebaseio.com",
+  projectId: "aziz-d8f63",
+  storageBucket: "aziz-d8f63.firebasestorage.app",
+  messagingSenderId: "455056129020",
+  appId: "1:455056129020:web:26d9539f5fbc31d378d079",
+  measurementId: "G-3EE5KD013G"
 };
 
 const app = initializeApp(firebaseConfig);
