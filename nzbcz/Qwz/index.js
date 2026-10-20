@@ -2,14 +2,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebas
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyChPZyT6xYddq75PbxNbsGzTIF4hE6RoeE",
-  authDomain: "fahim-98a25.firebaseapp.com",
-  databaseURL: "https://fahim-98a25-default-rtdb.firebaseio.com",
-  projectId: "fahim-98a25",
-  storageBucket: "fahim-98a25.firebasestorage.app",
-  messagingSenderId: "549240002193",
-  appId: "1:549240002193:web:49f4ade864f70b331c1130",
-  measurementId: "G-72PCZV7TQ6"
+  apiKey: "AIzaSyB167qMIQbZfcQ0pRDa3HXHb7_I1XQ7xcE",
+  authDomain: "nahiyan-7f898.firebaseapp.com",
+  databaseURL: "https://nahiyan-7f898-default-rtdb.firebaseio.com",
+  projectId: "nahiyan-7f898",
+  storageBucket: "nahiyan-7f898.firebasestorage.app",
+  messagingSenderId: "108162248148",
+  appId: "1:108162248148:web:4824e2fee343d924b9ba41",
+  measurementId: "G-T2EW64QQS4"
 };
 
 const app = initializeApp(firebaseConfig);
